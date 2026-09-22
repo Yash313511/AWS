@@ -1,4 +1,4 @@
-import { ObjectId } from 'mongodb';
+import mongoose from 'mongoose';
 import { Readable } from 'stream';
 import path from 'path';
 import crypto from 'crypto';
@@ -57,7 +57,7 @@ export class StorageService {
       readable.pipe(uploadStream);
 
       uploadStream.on('finish', () => {
-        resolve((uploadStream.id as ObjectId).toHexString());
+        resolve(String(uploadStream.id));
       });
       uploadStream.on('error', reject);
     });
@@ -142,8 +142,8 @@ export class StorageService {
     res: import('express').Response
   ): void {
     const bucket = getGridFSBucket();
-    const objectId = new ObjectId(gridfsId);
-    const downloadStream = bucket.openDownloadStream(objectId);
+    const objectId = new mongoose.Types.ObjectId(gridfsId);
+    const downloadStream = bucket.openDownloadStream(objectId as any);
     downloadStream.pipe(res);
     downloadStream.on('error', () => {
       if (!res.headersSent) {
@@ -159,8 +159,8 @@ export class StorageService {
     if (!gridfsId) return;
     try {
       const bucket = getGridFSBucket();
-      const objectId = new ObjectId(gridfsId);
-      await bucket.delete(objectId);
+      const objectId = new mongoose.Types.ObjectId(gridfsId);
+      await bucket.delete(objectId as any);
       logger.info('GRIDFS_DELETE', { gridfsId, message: 'File deleted from GridFS' });
     } catch (err: any) {
       logger.warn('GRIDFS_DELETE_ERROR', { gridfsId, message: err.message });
