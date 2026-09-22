@@ -1,0 +1,32 @@
+{
+  "name": "secure-drop-cloud",
+  "version": "1.0.0",
+  "description": "Cloud-Based Secure File Exchange and Access Management System",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build": "npm --prefix backend run build && npm --prefix frontend run build",
+    "vercel-build": "npm --prefix backend run build && npm --prefix frontend run build",
+    "test": "npm --prefix backend test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "keywords": [
+    "secure-file-exchange",
+    "mongodb",
+    "gridfs",
+    "file-transfer",
+    "vercel",
+    "express"
+  ],
+  "author": "Yash Suresh Waghamode",
+  "license": "ISC"
+}

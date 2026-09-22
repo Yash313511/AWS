@@ -1,0 +1,13 @@
+# Secure Cloud Project Document
+
+Title: Cloud-Based Secure File Exchange and Access Management System
+Author: Student Engineering Team
+Date: September 2026
+Cloud Platform: Amazon Web Services (AWS ap-south-1)
+
+Summary:
+This file demonstrates direct, account-free cloud-native file exchange between devices.
+- Storage: Amazon S3 (Encrypted, Private Bucket, Pre-signed URL Authorization)
+- Database: Amazon RDS PostgreSQL (Metadata, Cascade ACL, Parameterized Queries)
+- Compute: Amazon EC2 (Node.js REST API with Helmet, Rate Limiting, Brute-force lockout)
+- Security: Cryptographic Transfer Codes + Salted Bcrypt PIN Hashing
