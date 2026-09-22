@@ -1,6 +1,13 @@
 # SecureDrop Cloud — Cloud-Based Secure File Exchange & Access Management System
 
-> A modern, zero-account web application enabling secure, encrypted, and ephemeral cross-device file transfer powered by **MongoDB Atlas** and **Node.js / React**.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-secure--drop--cloud.vercel.app-blue?style=for-the-badge&logo=vercel)](https://secure-drop-cloud.vercel.app/)
+[![Database](https://img.shields.io/badge/Database-MongoDB%20Atlas-green?style=for-the-badge&logo=mongodb)](https://www.mongodb.com/atlas)
+[![License](https://img.shields.io/badge/License-ISC-purple?style=for-the-badge)](LICENSE)
+
+> **Live Application**: [https://secure-drop-cloud.vercel.app/](https://secure-drop-cloud.vercel.app/)  
+> **API Health Endpoint**: [https://secure-drop-cloud.vercel.app/api/health](https://secure-drop-cloud.vercel.app/api/health)
+
+A modern, zero-account web application enabling secure, encrypted, and ephemeral cross-device file transfer powered by **MongoDB Atlas (GridFS)** and **Node.js / React** deployed on **Vercel**.
 
 ```
 Upload File  ──▶  Receive Code (6-char) + PIN (6-digit)  ──▶  Switch Device  ──▶  Verify PIN  ──▶  Secure Download
